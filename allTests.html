@@ -15,6 +15,14 @@
 				background:url('https://www.paypalobjects.com/webstatic/mktg/Logos/paypal-logo1x.svg') no-repeat 0 0;
 				text-indent:-1000em;
 			}	
+			.sr-only {
+			  position: absolute !important;
+			  height: 1px; width: 1px; 
+			  overflow: hidden;
+			  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			  clip: rect(1px, 1px, 1px, 1px);
+			}
+
 		</style>  
 </head>
 <body>
@@ -31,9 +39,13 @@
 			
 			Input type = hiddden <input type="hidden" id="ip3" name="ip3"> <br><br>
 			
-			Aria-label - First Name<input type="text" aria-label="First Name"><br><br>
-			<span id="mName"> Aria-labelledBy - Middle Name</span> <input type="text" aria-labelledBy="mName"> <br><br>
-			<span id="lName"> Aria-describedBy - Last Name </span> <input type="text" aria-describedBy="lName"> <br><br>
+			<h3> Aria-label </h3>
+			<input type="text" aria-label="First Name"><br><br>
+			
+			<h3> Aria-labelledBy</h3>
+			<input type="text" aria-labelledBy="mName"> <br><span id="mName"> Middle Name</span> <br><br>
+		 	<h3> Aria-describedBy</h3>
+			<input type="text" aria-describedBy="lName"> <br><span id="lName"> Last Name </span> <br><br>
 		
 			<p><input type="submit" id="submit" value="Submit form"></p>
 		
