@@ -1,0 +1,323 @@
+/* /home/resources/css/nh.css */
+
+/* overrides to remove table styles */
+#fixed-top, #fixed-top > .table-row, #fixed-top > .table-row > * {
+    display: block;
+}
+#fixed-top > header.table-row > * {
+    z-index: 3
+}
+.row-fluid.hero {
+    height: 100%;
+    top: -72px;
+    top: 0\9;
+}
+.hero-bg video {
+    visibility: hidden;
+}
+.hero-bg {
+    background-image: url("https://www.paypalobjects.com/webstatic/en_US/mktg/wright/home/onetouch_hero.jpg");
+    min-height: 540px;
+    height: 100%;
+    box-sizing: border-box;
+}
+.hero-bg.video-loaded {
+    background-image: none;
+}
+.moving-background .mb-button {
+    bottom: 156px;
+    display: none;
+}
+.pxp-fluid-height, .pxp-fixed-height {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+.pxp-fluid-height {
+    max-width: 100%;
+    width: 100%;
+}
+/* ie8 */
+.no-csstransforms .pxp-fluid-height, .no-csstransforms .pxp-fixed-height {
+    position: static;
+}
+.pxp-fixed-height {
+    height: 390px;
+    -webkit-transform: translateY(-22%) translateX(-50%);
+    transform: translateY(-22%) translateX(-50%);
+}
+#hero-arrow {
+    display: none;
+}
+#hugger-arrow {
+    top: -10px;
+}
+.hero .input-wrapper {
+    margin-top: 26px;
+}
+.hero .input-wrapper:first-child input {
+    margin-left: 0;
+}
+.hero input[type="email"] {
+    width: 250px;
+}
+.hero input[type="password"] {
+    width: 165px;
+}
+.hero input.btn {
+    min-width: 250px;
+}
+.hero .btn {
+    width: 321px;
+}
+.hero .signup-subline {
+    margin-top: 26px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    font-size: 1.07142857142857rem;
+}
+.hugger-row {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    border-bottom: 1px solid #e6e6e6;
+}
+.hugger-row.changePosition {
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate(0, 0);
+}
+.hero-hugger {
+    text-align: center;
+    box-sizing: border-box;
+    background: #fff;
+}
+.hero-hugger .containerCentered {
+    padding-top: 16px;
+    line-height: 0.5em;
+}
+.hero-hugger .button-menu {
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    white-space: nowrap;
+}
+.hero-hugger .button-menu li {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 14px;
+}
+.hero-hugger .button-menu .navlink {
+    display: inline-block;
+    font-size: 13px;
+    color: #777;
+    padding-left: 8px;
+    border-left: 1px solid #ddd;
+    position: relative;
+    top: -2px;
+}
+.hero-hugger .country-selector {
+    width: 180px;
+    margin-top: 0;
+}
+.hero-hugger .country-selector a {
+    color: #777;
+}
+.button-menu .icon {
+    background-color: transparent;
+    background-image: url("https://www.paypalobjects.com/webstatic/mktg/wright/icons/quickbar-icons2x.png");
+    background-image: url("https://www.paypalobjects.com/webstatic/mktg/wright/icons/quickbar-icons.png")\9;
+    background-repeat: no-repeat;
+    background-position: -25px 5px;
+    background-size: 72px 32px;
+    margin: 0 4px 0 0;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #8c8c8c;
+    border-radius: 14px;
+    overflow: hidden;
+    text-indent: -999em;
+    min-width: 0;
+    padding: 0;
+    moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+.button-menu .icon:hover, .button-menu .icon:focus {
+    border-color: #0079c1;
+}
+.button-menu .icon:focus {
+    outline: 0;
+    box-shadow: 0 0 0 1px #0079c1;
+}
+.button-menu .icon.help {
+    width: 23px;
+}
+.button-menu .icon.help:hover, .button-menu .icon.help:focus {
+    background-position: -25px -15px;
+}
+.button-menu .icon.contact {
+    background-position: -55px 5px;
+}
+.button-menu .icon.contact:hover, .button-menu .icon.contact:focus {
+    background-position: -55px -15px;
+}
+.button-menu .icon.search {
+    background-position: 5px 5px;
+}
+.button-menu .icon.search:hover, .button-menu .icon.search:focus {
+    background-position: 5px -15px;
+}
+#n1 {
+    box-shadow: 0 -1px rgba(0, 0, 0, .1);
+}
+.n1 {
+    background-image: url("https://www.paypalobjects.com/webstatic/en_US/mktg/wright/home/home_n1_1x.jpg");
+}
+.n3 {
+    background-image: url("https://www.paypalobjects.com/webstatic/en_US/mktg/wright/home/home_n3_1x.jpg");
+}
+.n2, .n2.parallax .parallax-bg {
+    background-image: url("https://www.paypalobjects.com/webstatic/en_US/mktg/wright/home/home_n2_1x.jpg");
+}
+.n4, .n4.parallax .parallax-bg {
+    background-image: url("https://www.paypalobjects.com/webstatic/en_US/mktg/wright/home/home_n4_1x.jpg");
+}
+/*tickle bar */
+
+.hero-notification p, .hero-notification h3 {
+    padding: 0 0 22px 0;
+}
+.hero-notification p {
+    font-size: 15px;
+    font-size: 1.07142857142857rem;
+    line-height: 1.5;
+}
+
+h1 {
+    line-height: 1em;
+    margin-bottom: 20px;
+    padding-top: 50px\9;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html[data-device-type="dedicated"] .pxp-fixed-height .span11 {
+    width: 45%;
+    width: 40%\9;
+}
+/* Mobile version */
+
+html[data-device-type="mobile"] .hero .btn {
+    display: block;
+    margin: 0 auto;
+    width: 89%;
+    -webkit-touch-callout: none;
+}
+html[data-device-type="mobile"] #fixed-top > .table-row.hero > div {
+    vertical-align: middle;
+}
+html[data-device-type="mobile"] h1 {
+    margin-top: 100px;
+    padding: 4% 8% 0;
+    font-size: 40px;
+    font-size: 2.857rem;
+    line-height: 1;
+}
+html[data-device-type="mobile"] .row-fluid .content-block {
+    min-height: 0;
+}
+html[data-device-type="mobile"] .hero-bg {
+    background-size: cover;
+    background-position: center bottom;
+    
+}
+@media (max-width: 467px) {
+    html[data-device-type="mobile"] .hero-bg {
+        height: 550px;
+        background-image: url("https://www.paypalobjects.com/webstatic/en_US/mktg/wright/home/onetouch_hero_phone_dark.jpg");
+    }
+    html[data-device-type="mobile"] h1 {
+        text-align: center;
+    }
+}
+@media (min-width: 468px) {
+    html[data-device-type="mobile"] h1, html[data-device-type="mobile"] .hero p {
+        width: 57%;
+        margin: 0;
+        padding: 4% 3% 0;
+    }
+    html[data-device-type="mobile"] .hero .btn {
+        margin: 0;
+    }
+    html[data-device-type="mobile"] .hero-bg {
+        min-height: 265px;
+    }
+}
+html[data-device-type="mobile"] .row-fluid.hero {
+    top: 0;
+}
+html[data-device-type="mobile"] #fixed-top .filler {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+@media (max-width: 768px) {
+    html[data-device-type="mobile"] .pxp-fluid-height {
+        position: static;
+        -webkit-transform: none;
+        transform: none;
+    }
+    .pxp-fluid-height {
+        width: 92.5%;
+    }
+    html[data-device-type="portable"] .pxp-fluid-height, html[data-device-type="portable"] .pxp-fixed-height {
+        -webkit-transform: translateY(-100%) translateX(-50%);
+        transform: translateY(-100%) translateX(-50%);
+    }
+    html[data-device-type="portable"] .hero-signup h1 {
+        margin-top: 172px;
+    }
+    html[data-device-type="portable"] #fixed-top > .table-row.hero > div, html[data-device-type="mobile"] #fixed-top > .table-row.hero > div {
+        text-align: center;
+        vertical-align: top;
+    }
+    html[data-device-type="portable"] #fixed-top > .table-row.hero .span5 {
+        margin: 0 auto;
+        float: none;
+    }
+    html[data-device-type="portable"] .hero-bg {
+        background-image: url("https://www.paypalobjects.com/webstatic/en_US/mktg/wright/home/onetouch_hero_tablet_portrait_dark.jpg");
+    }
+}
+@media (min-width: 769px) {
+    html[data-device-type="portable"] .pxp-fixed-height .span11 {
+        width: 45%;
+    }
+}
+/* pxp */
+
+.hero .treatment2 input[type="email"] {
+    width: 340px;
+}
+.hero .treatment2 .btn {
+    min-width: 340px;
+}
+.hero .treatment2 .input-wrapper:first-child input {
+    margin-left: 10px;
+}
+.hero .treatment2 .input-wrapper {
+    margin-top: 10px;
+}
+.hero .treatment2 .input-wrapper:first-child {
+    margin-top: 0;
+}
+.row-fluid form.treatment2 {
+    margin-top: 0;
+}
+
