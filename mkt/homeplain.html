@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-SG" data-device-type="mobile" style="">
+
+<head>
+<style>
+ .menu-wrapper {
+    position: static;
+    width: auto;
+    background: none repeat scroll 0 0 #009cde;
+    display: none;
+    height: 0;
+    left: 0;
+    overflow: hidden;
+
+    top: 72px;
+    transition: all 0.2s ease-out 0s;
+
+    z-index: 3;
+}
+</style>
+</head>
+
+<body>
+
+	<a href="#Menu" id="menu-button" role="button" aria-controls="main-menu" aria-expanded="false">Menu</a>
+	<nav style="height: 802px;" role="navigation" id="main-menu" aria-hidden="true">
+		<div tabindex="-1" role="region" aria-labelledby="header-buy" id="submenu-buy" class="menu-wrapper">	
+ 			<a href="https://www.paypal.com/sg/webapps/mpp/home" id="header-buy" rel="menu item" aria-controls="submenu-buy" aria-expanded="false" role="button">Buy</a> <br>
+			<a href="https://www.paypal.com/sg/webapps/mpp/merchant" id="header-sell" rel="menu item" aria-controls="submenu-sell" aria-expanded="false" role="button">Sell</a>
+		</div>	
+
+	</nav>
+
+</body></html>
