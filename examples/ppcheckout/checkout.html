@@ -171,6 +171,11 @@
     .form-group{ margin-bottom: 20px}
     </style>
 
+<style>
+.cardfloat{ margin:10px;}
+.cctype{margin-left:5px;margin-top:10px}
+</style>
+
 <body class="ng-scope">
 
 
@@ -183,13 +188,15 @@
     </div>
 </div>
 
-<!-- uiView:  --><div ui-view="" class="ng-scope"><div xo-checkout="" component-route="route" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-checkout-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="outerWrapper US en" ng-class="[locale.country, locale.lang, miniBrowser?&#39;minibrowser&#39;:&#39;&#39;, isApp?&#39;mobileApp&#39;:&#39;&#39;]" id="outerWrapper">
+<div ui-view="" class="ng-scope"><div xo-checkout="" component-route="route" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-checkout-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="outerWrapper US en" ng-class="[locale.country, locale.lang, miniBrowser?&#39;minibrowser&#39;:&#39;&#39;, isApp?&#39;mobileApp&#39;:&#39;&#39;]" id="outerWrapper">
     <!-- Messenger BA .. HIDE this -->
     <!-- ngIf: !isMessengerBAIntegration --><xo-merchant-header ng-if="!isMessengerBAIntegration" token="token" role="heading" aria-level="1" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-merchant-header-wrapper ng-scope" ng-if="populated &amp;&amp; display"><header role="banner">
     <div id="header" class="merchantHeader clearfix">
         <div class="headerWrapper">
             <!-- ngIf: !(merchant.logo_url || merchant.imageUrl) -->
-            <!-- ngIf: merchant.logo_url || merchant.imageUrl --><img ng-src="https://store8437.americommerce.com/PayPalLogo190by60.jpg" alt="Off The Beaten Path, Inc." ng-if="merchant.logo_url || merchant.imageUrl" xo-merchant-image-resize="" class="ng-scope" src="https://store8437.americommerce.com/PayPalLogo190by60.jpg"><!-- end ngIf: merchant.logo_url || merchant.imageUrl -->
+            <!--<img ng-src="https://store8437.americommerce.com/PayPalLogo190by60.jpg" alt="Off The Beaten Path, Inc." ng-if="merchant.logo_url || merchant.imageUrl" xo-merchant-image-resize="" class="ng-scope" src="https://store8437.americommerce.com/PayPalLogo190by60.jpg"-->
+            <!-- end ngIf: merchant.logo_url || merchant.imageUrl -->
+            <h2>Off The Beaten Path, Inc.</h2>
         </div>
     </div>
 </header>
@@ -211,7 +218,7 @@
     <span id="transactionCart" ng-class="{hasItems:showArrow}" class="hasItems">
         <span class="cartIcon" aria-label="Shopping cart"></span>
         <!-- ngIf: showAmt --><span ng-if="showAmt" class="ng-scope">
-            <format-currency class="formatCurrency ng-isolate-scope" code="checkoutCart.purchase.amounts.total.currency_code" amount="checkoutCart.purchase.amounts.total.amount"><span ng-bind-html="amount_formatted" class="ltrOverride ng-binding">$6.99 <span class="currencyCode">USD</span></span></format-currency>
+            <format-currency class="formatCurrency ng-isolate-scope" code="checkoutCart.purchase.amounts.total.currency_code" amount="checkoutCart.purchase.amounts.total.amount"><span ng-bind-html="amount_formatted" class="ltrOverride ng-binding">$100 <span class="currencyCode">USD</span></span></format-currency>
         </span><!-- end ngIf: showAmt -->
         <!-- ngIf: showArrow && checkoutCart.purchase.items --><span ng-if="showArrow &amp;&amp; checkoutCart.purchase.items" class="arrow ng-scope" aria-label="Show"></span><!-- end ngIf: showArrow && checkoutCart.purchase.items -->
     </span>
@@ -316,7 +323,7 @@
     <div class="row-fluid">
         <div class="span14">
             <!-- uiView: undefined --><ui-view class="ng-scope"><div xo-add-card-flow="" token="token" message="message" pagetitle="pagetitle" parent-callbacks="callbacks" logout="logout" component-route="route" export="view" class="ng-scope ng-isolate-scope"><!-- uiView:  --><div ui-view="" class="ng-scope"><div xo-add-card="" token="token" cardmodel="cardmodel" done="addCCDone" message="message" pagetitle="pagetitle" sidebar="sidebar" showmeftsection="showmeftsection" hideparenthead="hideparenthead" billingaddressupdated="billingaddressupdated" isupdatecard="isupdatecard" parent-callbacks="callbacks" selected-promotion-card-type="selectedPromotionCardType" promotion="promotion" page-level="pageLevel" logout="logout" phone="phone" component-route="route" export="view" class="ng-scope ng-isolate-scope">
-<div content="" modal-box="!!sidebar" modal-cancel="cancelFn()" xo-tray-height="">
+<div>
     <!-- ngIf: sidebar && !checkoutSession.plccOffer && !cardmodel.card.isExisting() -->
     <!-- ngIf: manageCardFlow -->
     <!-- ngIf: sidebar && checkoutSession.plccOffer -->
@@ -349,110 +356,33 @@
         <!-- ngRepeat: layoutItem in metadata.nameEntry.layout --><!-- ngIf: metadata.nameEntry.layout -->
         <div ng-if="metadata.nameEntry.layout" ng-repeat="layoutItem in metadata.nameEntry.layout" class="ng-scope">
 
-    <!-- First name -->
-      <div class="half confidential" ng-class="{&#39;last-child&#39;: $last}" floating-label="" directionality="">
+    <!-- F I R S T  N A M E -->
 
-        <div class="form-group">
-          <p>
-              First name
-          </p>
+      <div ng-class="{&#39;last-child&#39;: $last}" style="margin-left:5px">
 
-            <input type="text" id="firstName" name="firstName" aria-required="true" data-class="help" data-helptext="your first name" data-errortext='{"errEmpty": "Please enter a valid first name"}'/>
+        <div>       
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" data-class="help" data-helptext="your first name" data-errortext='{"errEmpty": "Please enter a valid first name"}'/>
         </div>  
 
-
-        <!--input ng-model="user.first_name" id="firstName" name="firstName" value=""  autocapitalize="off" autocomplete="off" maxlength="100" xo-error-tooltip="" ng-required="true" class="ng-pristine ng-valid-pattern ng-valid-maxlength hasErrorTooltipRequired ng-touched focused ng-valid ng-valid-required" data-class="help" data-helptext="your first name" data-errortext='{"errEmpty": "Please enter a valid first name"}'-->
       </div>
+  </div>
 
-    <!-- Last name -->
-    <!-- ngIf: layoutItem.$ === 'surname' -->
-  </div><!-- end ngIf: metadata.nameEntry.layout --><!-- end ngRepeat: layoutItem in metadata.nameEntry.layout --><!-- ngIf: metadata.nameEntry.layout --><div ng-if="metadata.nameEntry.layout" ng-repeat="layoutItem in metadata.nameEntry.layout" class="ng-scope">
-
-  </div><!-- end ngIf: metadata.nameEntry.layout --><!-- end ngRepeat: layoutItem in metadata.nameEntry.layout -->
-  <!-- ngIf: !metadata.nameEntry.layout -->
 </div>
-</xo-name-input>
-<style>
-.cardfloat{ float:left;margin:10px;}
-</style>
+</xo-name-input> 
 
-<p> Choose Credit card type </p>
-    <input type="radio" name="cardtype" class="cardfloat"><span class="creditCardInput"><span class="cardIcon AMEX"></span></span><br clear='all'>
-    <input type="radio" name="cardtype" class="cardfloat"><span class="creditCardInput"><span class="cardIcon DISCOVER"></span></span><br clear='all'>
-    <input type="radio" name="cardtype" class="cardfloat"><span class="creditCardInput"><span class="cardIcon VISA"></span></span><br clear='all'>
-    <input type="radio" name="cardtype" class="cardfloat"><span class="creditCardInput"><span class="cardIcon MASTERCARD"></span></span><br clear='all'>
+     <!-- C A R D   T Y P E S -->
 
-    <xo-credit-card token="token" card="cardmodel.card" user="cardmodel.user" selected-promotion-card-type="selectedPromotionCardType" card-type-changed="cardTypeChanged" promotion="promotion" manage-card-flow="manageCardFlow" class="ng-isolate-scope"><div class="creditCardInput" content="">
+    <fieldset class="cctype">
 
-    <!-- <div class="cardIconsGroup ng-scope" ng-if="!manageCardFlow &amp;&amp; showAcceptedCardLogos()">
- <div class="icons ng-scope" ng-repeat="cardType in cardTypes.allowed"><div class="cardIcon AMEX"></div></div>
- <div class="icons ng-scope" ng-repeat="cardType in cardTypes.allowed"><div class="cardIcon DISCOVER"></div></div>
- <div class="icons ng-scope" ng-repeat="cardType in cardTypes.allowed"><div class="cardIcon VISA"></div></div>
- <div class="icons ng-scope" ng-repeat="cardType in cardTypes.allowed"><div class="cardIcon MASTERCARD"></div></div>
-    </div>
--->
-    <div ng-if="!manageCardFlow" class="inputField confidential cardNumber creditCardField ng-scope" directionality="">
+    <legend> Choose Credit Card Type </legend>
+        <label><input type="radio" name="cardtype" id="amex" class="cardfloat"> Amex </label> <br>
+        <label><input type="radio" name="cardtype" id="discover" class="cardfloat">Discover</label> <br>
+        <label><input type="radio" name="cardtype" id="visa" class="cardfloat">Visa </label><br>
+        <label><input type="radio" name="cardtype" id="mc" class="cardfloat">Mastercard </label><br>
 
-        <label for="cc" class="focus accessAid ng-binding">
-            Card number
-        </label>
-
-        <input type="tel" ui-validate="{luhn: &#39;cardLuhnValid($value)&#39;, len: &#39;cardLengthValid($value)&#39;}" ui-validate-watch="&#39;card.type&#39;" ng-model="card.number" name="cardNumber" id="cc" value="" ng-change="changeCardNumber(false)" ng-blur="ccOnBlur()" maxlength="19" data-number="" autocapitalize="off" data-country="US" autocomplete="off" placeholder="Card number" ng-pattern="/.*/" pattern="[0-9]*" scroll-to-top="" data-error-text="Enter a valid credit card number" xo-error-tooltip="" class="ng-pristine ng-untouched ng-invalid ng-invalid-len ng-valid-luhn ng-valid-pattern ng-valid-maxlength hasErrorTooltipRuleSpecific" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRuleSpecific" id="omecozm">Enter a valid credit card number</div>
-
-        <!-- ngIf: allowedCardsTooltip -->
-
-        <!-- ngIf: card.type -->
-    </div><!-- end ngIf: !manageCardFlow -->
-
-    <!-- Issue no and start date for maestro cards -->
-    <!-- ngIf: flag('fields.issue') -->
-
-    <!-- ngIf: expiryShown() || cvvShown() --><div class="expiration confidential ng-scope" id="expiration" ng-if="expiryShown() || cvvShown()">
-        <!-- ngIf: expiryShown() --><xo-card-expiry ng-if="expiryShown()" expiry-month="card.expiry_month" expiry-year="card.expiry_year" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-card-expiry-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="expirationField inputField" id="expirationField" directionality="" content="">
-    <label class="expires ng-binding" for="expiry_value">Expires</label>
-    <div class="inputField" directionality="">
-        <input ng-model="expiryDate" name="expiry_value" id="expiry_value" value="" maxlength="5" autocapitalize="off" aria-describedby="expiryHelp" autocomplete="off" ui-validate="&#39;validate($value)&#39;" ng-keyup="formatExpiry($event)" placeholder="MM/YY" data-error-text="Enter a valid expiration date" xo-error-tooltip="" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-validator ng-invalid-required ng-valid-maxlength hasErrorTooltipRuleSpecific hasErrorTooltipRequired" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="dxpreca">Required</div><div class="errorTooltip errorTooltipRuleSpecific" id="xebcmew">Enter a valid expiration date</div>
-        <span id="expiryHelp" class="accessAid ng-binding" ng-bind="content(&#39;creditcard.expiresPlaceholder&#39;)">MM/YY</span>
-    </div>
-</div>
-</div><!-- end ngIf: populated && display --></xo-card-expiry><!-- end ngIf: expiryShown() -->
-        <!-- ngIf: cvvShown() --><xo-cvv ng-if="cvvShown()" card="card" show-label="true" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-cvv-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div content="" class="inputField cvvField" id="cvvField" directionality="">
-    <!-- ngIf: showLabel --><label ng-if="showLabel" class="cvv nolap ng-binding ng-scope" for="cvv">CSC</label><!-- end ngIf: showLabel -->
-
-    <div class="cvvSecurityCode inputField" directionality="">
-        <input type="tel" id="cvv" name="cvv" ng-model="card.security_code" aria-describedby="securityCodeHelp" ng-pattern="/^[0-9]{1,4}$/" ng-minlength="3" maxlength="3" placeholder="3 digits" ng-required="cvvRequired()" ng-class="{&#39;four&#39;: cvvLength() === 4}" autocomplete="off" data-error-text="Enter a valid CSC" xo-error-tooltip="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength hasErrorTooltipRuleSpecific hasErrorTooltipRequired" required="required" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="sfzjpyh">Required</div><div class="errorTooltip errorTooltipRuleSpecific" id="nmfmuqi">Enter a valid CSC</div>
-
-        <span id="securityCode" class="creditCard" role="img" ng-class="{&#39;four&#39;: cvvLength() === 4}" aria-label="It’s the last 3 digits in the signature area on the back of your card.">
-        </span>
-        <span id="securityCodeHelp" class="accessAid ng-binding" ng-bind="cvvLength() === 4 ? content(&#39;creditcard.cscHelp4Digits&#39;) : content(&#39;creditcard.cscHelp3Digits&#39;)">It’s the last 3 digits in the signature area on the back of your card.</span>
-    </div>
-</div>
-</div><!-- end ngIf: populated && display --></xo-cvv><!-- end ngIf: cvvShown() -->
-    </div><!-- end ngIf: expiryShown() || cvvShown() -->
-    
-    <!-- DOB fields for Country specific cards -->
-    <!-- ngIf: flag('fields.dob') -->
-</div>
-</xo-credit-card>
-
-                <!-- ngIf: flag('fields.address') --><div ng-if="flag(&#39;fields.address&#39;)" id="billingAddress" class="dropdown billingAddress confidential ng-scope">
-                    <label for="billingAddressDropdown" class="billingAddressLabel ng-binding">
-                        Billing address
-                        <a href="https://www.paypal.com/checkoutnow?token=EC-0W865412034612700" link-button="" ng-click="gotoBilling()" class="addNewBillingAddress ng-binding" aria-label="Add new billing address" role="button" tabindex="0">Add</a>
-                    </label>
-                    <div class="dropdown billingAddress nullable custom-select-container">
-                        <select xo-dropdown="" default="Add new billing address" ng-model="cardmodel.address" ng-change="gotoBilling(cardmodel.address)" ng-options="address.full_address for address in billingAddresses.addresses" name="billingAddress" id="billingAddressDropdown" required="" class="ng-pristine ng-untouched ng-valid ng-isolate-scope replaced ng-valid-required"><option label="2211, N 1st Street,, San Jose, CA 95112" value="object:133" selected="selected">2211, N 1st Street,, San Jose, CA 95112</option><option label="H, Fffsa, San Jose, CA 95131" value="object:134">H, Fffsa, San Jose, CA 95131</option></select><span class="custom-select" aria-hidden="true"><span><span>2211, N 1st Street,, San Jose, CA 95112</span></span></span>
-                    </div>
-                </div><!-- end ngIf: flag('fields.address') -->
-
-                <!-- ngIf: flag('fields.phone') -->
-
-                <div class="addressLabel">
-                    <a href="https://www.paypal.com/checkoutnow?token=EC-0W865412034612700" link-button="" ng-click="gotoBilling()" class="ng-binding" role="button" tabindex="0">Add new billing address</a>
-                </div>
-
-                <!-- ngIf: showplcc -->
-
+      
+    </fieldset>
 
                 <input track-submit="add_cc" type="button" value="Add" id="proceedButton" class="btn full">
             </div>
@@ -546,7 +476,7 @@
 
     var firstName = $('#firstName');
 
-        firstName.tooltip({'title' : firstName.data('helptext') ,'placement' : 'bottom'})
+        // firstName.tooltip({'title' : firstName.data('helptext') ,'placement' : 'bottom'})
 
 
         $('#proceedButton').on('click' , function(e) {
