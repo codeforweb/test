@@ -23,7 +23,9 @@
       }
 
       componentDidMount() {
-        axios.get(`http://www.reddit.com/r/${this.props.subreddit}.json`)
+         // Cross-Origin Resource Sharing policy
+        // axios.get(`http://www.reddit.com/r/${this.props.subreddit}.json`)
+        axios.get('reactjs.json')
           .then(res => {
             const posts = res.data.data.children.map(obj => obj.data);
             this.setState({ posts });
