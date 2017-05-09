@@ -30,29 +30,29 @@
       
       switch (event.key) {
         case 'ArrowDown':
-          event.preventDefault();
-          index++
+          index++;
+          if (index == items.length) index = 0;
+          items.item(index).focus();
+          //console.log(items.item(index).children[0]);
           break;
         case 'ArrowUp':
-          event.preventDefault();
           index--;
+          if (index < 0) index = items.length - 1;
+          items.item(index).focus();
           break;
-          
         case 'Enter':
         case ' ':
-          event.preventDefault();
-          break;
+          items.item(index).children[0].click();
+          break;          
         case 'Escape':
-         //console.log(this.props.toggle);
-         var cont = menu.parentNode;
+          //console.log(this.props.toggle);
+          this.props.toggle.state = {isToggleOn: false};
+          const cont = menu.parentNode;
           cont.className = 'dropdown';
-          cont.querySelector('[role=button]').focus();
-          break;
-        default:
-      }
-			if (index < 0) index = items.length - 1;
-			if (index == items.length) index = 0;
-			items.item(index).focus();                  
+          const btn = cont.querySelector('[role=button]');
+          btn.setAttribute('aria-expanded','false');
+          btn.focus();
+      }	             
     }      
       
       render() {
@@ -86,20 +86,20 @@
       render() {
         return(
            <nav  className={this.state.isToggleOn ? 'dropdown open' : 'dropdown'} key="2">
-            <a id="drop1" key="3" href="#" role="button" onClick={this.handleClick} className="dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
+            <a id="drop1" key="3" aria-haspopup="true" aria-expanded={this.state.isToggleOn} href="#" role="button" onClick={this.handleClick} className="dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
             <Menu toggle={this} items={this.props.items}/>
            </nav>  
         );
       }         
     }
 
-	var mi =[
+	var sports =[
 			{'id':1, 'content':'Cricket','link':'http://sports.yahoo.com'}, 
-			{'id':2, 'content':'Tennis','link':'http://bbc.com'},
-			{'id':3, 'content':'Batminton','link':'http://cnn.com'}
+			{'id':2, 'content':'Tennis','link':'http://www.bbc.com/sport'},
+			{'id':3, 'content':'Badminton','link':'http://bwfbadminton.com/'}
 			]
     ReactDOM.render(
-      <Button key="1" items={mi}/>,
+      <Button key="1" items={sports}/>,
       document.getElementById('container')
     );
 
