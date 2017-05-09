@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set Focus on componentDidMount</title>
+    <style>
+.cta-button-orange {
+  background-color: #e7a200;
+  box-shadow: 0 4px 0 0 #d38b00;
+}
+
+.cta-button-orange:hover {
+  background-color: #d38b00;
+  box-shadow: 0 4px 0 0 #bb7700;
+}
+/* CTA Buttons
+------------------------------------------------------------ */
+
+.cta-button-blue,
+.cta-button-green,
+.cta-button-orange,
+.cta-button-pink,
+.cta-button-purple,
+.cta-button-red,
+.cta-button-teal,
+.cta-button-yellow {
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 24px 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+}    
+    </style>
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>
+    <script src="lib/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+    class Fakebutton extends React.Component {
+        constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+       }
+       handleClick(e) {
+        alert('clicked');
+      }       
+
+      componentDidMount(){
+
+      }
+
+      render() {
+        return(
+          <div>
+          <span className="cta-button-orange" ref={(btn) => { this.btn = btn; }} onClick={this.handleClick}> Buy Now!!! </span>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(
+      <Fakebutton />,
+      document.getElementById('root')
+    );
+
+    </script>
+  </body>
+</html>
