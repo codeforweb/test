@@ -86,7 +86,7 @@
       render() {
         return(
            <nav  className={this.state.isToggleOn ? 'dropdown open' : 'dropdown'} key="2">
-            <a id="drop1" key="3" aria-haspopup="true" aria-expanded={this.state.isToggleOn} href="#" role="button" onClick={this.handleClick} className="dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
+            <a id="drop1" key="3" aria-haspopup="true" aria-expanded={this.state.isToggleOn} href="#" role="button" onClick={this.handleClick} className="dropdown-toggle btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
             <Menu toggle={this} items={this.props.items}/>
            </nav>  
         );
