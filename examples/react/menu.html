@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dropdown menu</title>
+  
+    <link href="lib/bootstrap.css" rel="stylesheet">
+
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>
+    <script src="lib/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+
+  <script type="text/babel">
+
+
+    class Menu extends React.Component {
+      constructor(props) {
+        super(props);
+       this.handleKeyDown = this.handleKeyDown.bind(this);
+      }
+      
+    handleKeyDown = event => {
+      var menu = ReactDOM.findDOMNode(this);
+      var items = menu.getElementsByTagName('li');
+      var index = Array.prototype.indexOf.call(items, event.target);
+      if (!~index)                                      index = 0
+      
+      switch (event.key) {
+        case 'ArrowDown':
+          event.preventDefault();
+          index++
+          break;
+        case 'ArrowUp':
+          event.preventDefault();
+          index--;
+          break;
+          
+        case 'Enter':
+        case ' ':
+          event.preventDefault();
+          break;
+        case 'Escape':
+         //console.log(this.props.toggle);
+         var cont = menu.parentNode;
+          cont.className = 'dropdown';
+          cont.querySelector('[role=button]').focus();
+          break;
+        default:
+      }
+			if (index < 0) index = items.length - 1;
+			if (index == items.length) index = 0;
+			items.item(index).focus();                  
+    }      
+      
+      render() {
+        return(
+              <ul className="dropdown-menu" role="menu" aria-labelledby="drop1">
+              {this.props.items.map(item =>
+                <li tabIndex="-1"  key={item.id.toString()} role="presentation" onKeyDown={this.handleKeyDown}>
+                  <a key={item.id} role="menuitem"  tabIndex="-1" href={item.link}>{item.content}</a>
+                </li>
+              )}
+            </ul>
+        );
+      }
+    }
+    class Button extends React.Component{
+       constructor(props) {
+        super(props);
+        this.state = {isToggleOn: false};
+        this.handleClick = this.handleClick.bind(this);
+       }
+       handleClick(e) {
+          this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+          }    
+       ));         
+      }
+      componentDidUpdate() {
+          const element = ReactDOM.findDOMNode(this);
+          element.querySelector('li').focus();      
+        }      
+      render() {
+        return(
+           <nav  className={this.state.isToggleOn ? 'dropdown open' : 'dropdown'} key="2">
+            <a id="drop1" key="3" href="#" role="button" onClick={this.handleClick} className="dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
+            <Menu toggle={this} items={this.props.items}/>
+           </nav>  
+        );
+      }         
+    }
+
+	var mi =[
+			{'id':1, 'content':'Cricket','link':'http://sports.yahoo.com'}, 
+			{'id':2, 'content':'Tennis','link':'http://bbc.com'},
+			{'id':3, 'content':'Batminton','link':'http://cnn.com'}
+			]
+    ReactDOM.render(
+      <Button key="1" items={mi}/>,
+      document.getElementById('container')
+    );
+
+    </script> 
+
+  </body>
+</html>
+
+
+
+ 
+
